@@ -24,10 +24,7 @@ fn main() -> Result<(), std::io::Error> {
             horizontal: 3,
             vertical: 1,
         })
-        .filter(|square| match square {
-            Square::Tree => true,
-            Square::Empty => false,
-        })
+        .filter(|square| square.is_tree())
         .count();
 
     println!("{}", num_trees);

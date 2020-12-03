@@ -4,6 +4,15 @@ pub enum Square {
     Tree,
 }
 
+impl Square {
+    pub fn is_tree(&self) -> bool {
+        match &self {
+            Square::Tree => true,
+            Square::Empty => false,
+        }
+    }
+}
+
 pub struct Topology<'t> {
     pub squares: &'t Vec<Vec<Square>>,
     pub height: usize,

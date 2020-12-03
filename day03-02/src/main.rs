@@ -47,10 +47,7 @@ fn main() -> Result<(), std::io::Error> {
         .map(|slope| {
             topology
                 .iter(slope)
-                .filter(|square| match square {
-                    Square::Tree => true,
-                    Square::Empty => false,
-                })
+                .filter(|square| square.is_tree())
                 .count()
         })
         .product::<usize>();
