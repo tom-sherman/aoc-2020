@@ -104,6 +104,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "day03-02"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "day03-01",
+]
+
+[[package]]
 name = "hashbrown"
 version = "0.9.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"

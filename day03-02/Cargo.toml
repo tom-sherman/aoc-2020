@@ -1,0 +1,11 @@
+[package]
+name = "day03-02"
+version = "0.1.0"
+authors = ["Tom Sherman <the.tomsherman@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "3.0.0-beta.2"
+day03-01 = { path = "../day03-01" }
