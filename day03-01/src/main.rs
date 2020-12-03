@@ -68,8 +68,8 @@ struct Slope {
 
 impl<'t> Topology<'t> {
     /// Get the squares on the path of some slope
-    fn iter(&'t self, slope: Slope) -> MapIterator<'t> {
-        MapIterator {
+    fn iter(&'t self, slope: Slope) -> TopologyIterator<'t> {
+        TopologyIterator {
             topology: &self,
             slope: slope,
             curr_vertical: 0,
@@ -78,14 +78,14 @@ impl<'t> Topology<'t> {
     }
 }
 
-struct MapIterator<'t> {
+struct TopologyIterator<'t> {
     topology: &'t Topology<'t>,
     slope: Slope,
     curr_vertical: usize,
     curr_horizontal: usize,
 }
 
-impl<'t> Iterator for MapIterator<'t> {
+impl<'t> Iterator for TopologyIterator<'t> {
     type Item = Square;
 
     fn next(&mut self) -> Option<Square> {
