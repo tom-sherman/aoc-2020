@@ -20,7 +20,7 @@ fn main() -> Result<(), std::io::Error> {
     };
 
     let num_trees = topology
-        .iter(Slope {
+        .iter(&Slope {
             horizontal: 3,
             vertical: 1,
         })

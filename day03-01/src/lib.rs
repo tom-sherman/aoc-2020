@@ -17,10 +17,10 @@ pub struct Slope {
 
 impl<'t> Topology<'t> {
     /// Get the squares on the path of some slope
-    pub fn iter(&'t self, slope: Slope) -> TopologyIterator<'t> {
+    pub fn iter(&'t self, slope: &'t Slope) -> TopologyIterator<'t> {
         TopologyIterator {
             topology: &self,
-            slope: slope,
+            slope: &slope,
             curr_vertical: 0,
             curr_horizontal: 0,
         }
@@ -29,7 +29,7 @@ impl<'t> Topology<'t> {
 
 pub struct TopologyIterator<'t> {
     topology: &'t Topology<'t>,
-    slope: Slope,
+    slope: &'t Slope,
     curr_vertical: usize,
     curr_horizontal: usize,
 }
